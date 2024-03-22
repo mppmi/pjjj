@@ -1,0 +1,52 @@
+.toolbar-button1 {
+    float: right;
+    margin-top: -65px;
+    margin-right: 60px;
+}
+.bottom-toolbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #7c7c7c; 
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.toolbar-button-main {
+    padding: 10px 20px;
+    background-color: #afafaf00; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.toolbar-button:hover {
+    background-color: #777; 
+}
+.toolbar-button {
+    background-color:  #fff; /* เปลี่ยนสีพื้นหลัง */
+    color: #fff; /* เปลี่ยนสีของตัวอักษร */
+    border: none; /* ลบเส้นขอบ */
+    border-radius: 80px; /* ปรับรูปร่างเป็นวงกลม */
+    padding: 8px 15px; /* ปรับขนาดการเรียงตำแหน่งของข้อความภายในปุ่ม */
+    cursor: pointer; /* เปลี่ยนเป็นเคอร์เซอร์เมื่อชี้ */
+}
+
+/* สไตล์เมื่อชี้หน้าปุ่ม */
+.toolbar-button:hover {
+    background-color: #0f5a555a; /* เปลี่ยนสีพื้นหลังเมื่อชี้ */
+}
+
+/* สไตล์เมื่อคลิกปุ่ม */
+.toolbar-button:active {
+    background-color: #80000969; /* เปลี่ยนสีพื้นหลังเมื่อคลิก */
+}
+.content {
+    position: relative; 
+    z-index: 1; 
+    overflow-y: auto;
+    height: calc(100vh - 50px);
+    padding-bottom: 100px;
+}

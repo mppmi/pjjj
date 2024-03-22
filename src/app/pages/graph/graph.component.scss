@@ -1,0 +1,158 @@
+
+
+.bottom-toolbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #7c7c7c; 
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+  
+  .toolbar-button-main {
+    padding: 10px 20px;
+    background-color: #afafaf00; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toolbar-button:hover {
+    background-color: #777; 
+  
+  }
+  .toolbar-button {
+    background-color: #fff; 
+    color: #fff; 
+    border: none; 
+    border-radius: 80px; 
+    padding: 8px 15px; 
+    cursor: pointer; 
+  }
+  .toolbar-button:hover {
+    background-color: #0f5a555a; 
+  }
+  
+  .toolbar-button:active {
+    background-color: #80000969; 
+  }
+  .content {
+    position: relative; 
+    z-index: 1; 
+    overflow-y: auto;
+    height: calc(100vh - 50px);
+    padding-bottom: 100px;
+  }
+  
+  
+  .toolbar-button:hover {
+      background-color: #777; 
+  }
+  * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: sans-serif;
+      margin: 0;
+    }
+    
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    
+    
+    main {
+      padding: 20px;
+    }
+    
+    .ranking {
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+    
+    .ranking h2 {
+      margin-top: 0;
+    }
+    
+    .ranking ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .ranking li {
+      padding: 10px;
+    }
+    
+    .ranking .user {
+      display: flex;
+      align-items: center;
+    }
+    
+    .ranking .user img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    
+    .ranking .user h3 {
+      margin: 0;
+    }
+    
+    .ranking .user p {
+      margin: 0;
+      font-size: 12px;
+      color: #999;
+    }
+    
+    .graph {
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+    
+    .graph h2 {
+      margin-top: 0;
+    }
+    
+    #myChart {
+      width: 100%;
+      height: 400px;
+    }
+    .user {
+      background-color: #1a1a1a; /* เปลี่ยนสีพื้นหลังเป็นสีเทา */
+      padding: 10px; /* เพิ่ม padding เพื่อให้มีช่องว่างรอบขอบ */
+      margin-bottom: 10px; /* เพิ่ม margin ด้านล่างเพื่อให้มีระยะห่างระหว่างแต่ละ user */
+      text-align: center;
+  }
+  canvas {
+    max-width: 600px;
+    max-height: 400px;
+    margin: auto;
+  }
+  .icon-up::before {
+    content: "\25B2"; /* สัญลักษณ์ลูกศรขึ้น */
+  }
+  
+  .icon-down::before {
+    content: "\25BC"; /* สัญลักษณ์ลูกศรลง */
+  }
+  
+  .icon-zero::before {
+    content: "-"; /* สัญลักษณ์ขีดลบ */
+  }
+  
+    
+  .graph {
+    margin-top: 100px; /* เพิ่ม margin ด้านบนเพื่อทำให้กราฟห่างออกจากข้อความ "MY RANKING" */
+  }
+  
+  .user {
+    margin-bottom: 20pc; /* เพิ่ม margin ด้านล่างเพื่อทำให้มีระยะห่างระหว่างแต่ละ user */
+  }
+ 
+  

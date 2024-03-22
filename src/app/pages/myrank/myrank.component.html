@@ -1,0 +1,68 @@
+<div class="content">
+  <div class="top-toolbar">
+
+    <button *ngIf="uid" routerLink="" class="toolbar-button" style="margin-left: 80pc; margin-top: 1px;">
+      <img src="https://www.svgrepo.com/show/499618/logout.svg" style="height: 40px; width: 40px;">
+    </button>
+   
+    <div style="margin-left: 120px;">
+      <button mat-button (click)="goback()">
+        <span style="font-size: 25px; padding: 5px; color: yellow;"> < BACK</span>
+      </button>
+    </div>
+   
+    <div style="text-align: center; font-size: 40px;">
+      <span>Top 10 of the week</span>
+    </div>
+   
+    <div style="display: flex; margin-top: 5px; margin-bottom: 10px;">
+      <span style="margin-right: 19pc;">Number</span>
+      <span style="margin-right: 16pc;">Playlist</span>
+      <span style="margin-left:10pc;">NamePlaylist</span>
+      <span style="margin-left: 14pc;">SumScore</span>
+    </div>
+   
+    <ng-container *ngFor="let photo of photoData; let i = index;">
+      <div style="display: flex;  align-items: center; margin-bottom: 10px;">
+       
+        <div style="margin-left: 4.5pc;">
+          <span style="font-size: 20px;">{{ i + 1 }}</span>
+        </div>
+        
+        <div style=" margin-left: 5pc; margin-top: 20px; width: 150px; height: 150px;">
+          <img class="image-hover" routerLink="/graph" [queryParams]="{pid : photo.photoID }"  [src]="photo.photo_url" style="border-radius: 50px; width: 100%; height: 100%; object-fit: cover;">
+        </div>
+       
+        <div style="margin-left: 10pc;">
+          <span>{{ photo.name_playlist }}</span>
+        </div>
+        
+        <div style="margin-right: 100px;">
+          <span>{{ photo.sumscore }}</span>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+ 
+  <div class="bottom-toolbar">
+    
+    <button routerLink="/main" [queryParams]="{uid : this.uid}" class="toolbar-button-main"><img src="https://www.nicepng.com/png/full/17-178841_home-png-home-icon-free.png" style="width:40px; height: 40px;"></button>
+  
+    <button routerLink="/topten"[queryParams]="{uid : this.uid}" class="toolbar-button-main"><img src="https://i.pinimg.com/originals/92/25/c5/9225c5849fa25de3b2e6a32feda94d09.png" style="width: 50px;"><i class="fas fa-chart-line"></i></button>
+   
+    <button routerLink="" [queryParams]="{uid : this.uid}" class="toolbar-button-main"><img src="https://t-pop.com/images/love-hand-1.png" height="100px" alt="icon" style="width: 50px; height: 50px;"><i class="fas fa-vote-yea"></i></button>
+   
+    <button routerLink="/rank" [queryParams]="{uid : this.uid}" class="toolbar-button-main"><img src="https://cdn3.iconfinder.com/data/icons/simple-files-1/128/Signal-512.png" style="width: 50px; height: 50px;"><i class="fas fa-chart-bar"></i></button>
+   
+    <button *ngIf="uid" routerLink="/add" [queryParams]="{uid : this.uid}" class="toolbar-button-main">
+      <img src="https://icon-library.com/images/person-icon-svg/person-icon-svg-2.jpg" style="width: 50px; height: 50px;">
+      <i class="fas fa-user"></i>
+    </button>
+   
+    <button *ngIf="!uid" routerLink="/login" class="toolbar-button-main">
+      <img src="https://icon-library.com/images/person-icon-svg/person-icon-svg-2.jpg" style="width: 50px; height: 50px;">
+      <i class="fas fa-user"></i>
+    </button>
+  </div>
+</div>

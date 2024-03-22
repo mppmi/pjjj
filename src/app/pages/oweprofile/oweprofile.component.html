@@ -1,0 +1,56 @@
+<div class="content">
+    <div class="top-toolbar">
+      <button *ngIf="uid" routerLink=""  class="toolbar-button" style="margin-left: 80pc; margin-top: 1px;">
+        <img src="https://www.svgrepo.com/show/499618/logout.svg" style="height: 40px; width: 40px;">
+    </button>
+        <div style="display: flex; flex-direction: column; height: 100vh; overflow-y: scroll;">
+        <div style="margin-left: 120px; margin-right: 120px;">
+            <button mat-button (click)="goback()">
+                <span style="font-size: 25px; padding: 5px; color: yellow;"> < BACK</span>
+            </button>
+        </div>
+        <div style="text-align: center; font-size: 40px;">
+            <span>PROFILE</span>
+        </div>
+        
+        <ng-container *ngFor="let user of userData; let i = index;">
+            <ng-container *ngIf="uid == user.userID">
+                <div style="display: flex; flex-direction: column; margin: 25px; padding-top: 25px; justify-content: center; align-items: center;">
+                    <!-- รูปภาพ avatar -->
+                    <div style="text-align: center; width: 200px; height: 200px; overflow: hidden; border-radius: 50%; display: flex;">
+                        <img [src]="user.avatar" alt="image" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <!-- ชื่อผู้ใช้ -->
+                    <div style="text-align: center; font-size:30px; margin-top: 20px;">
+                        <span>{{user.username}}</span>
+                    </div>
+                    <div style="text-align: center; font-size:16px; margin-top: 10px; margin-bottom: 40px;">
+                        <span>{{user.email}}</span>
+                    </div>
+                </div>
+                    <div style="text-align: start; margin-left: 300px; font-size:22px; margin-top: 10px; margin-bottom: 20px;">
+                        <span>Playlist</span>
+                    </div>
+                    <!-- รายการรูปภาพและชื่อ playlist -->
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+                        <ng-container *ngFor="let photo of photoData; let i = index;">
+                            <ng-container *ngIf="uid == photo.userID">
+                                <div style="margin-right: 20px; margin-left: 10px; width: 150px; height: 150px; text-align: center;">
+                                    <img class="image-hover" [src]="photo.photo_url" style="border-radius: 50px; width: 100%; height: 100%; object-fit: cover;">
+                                    <span style="font-size: 14px; color: white; margin-top: auto; margin-bottom: 5px; text-align: center;">{{ photo.name_playlist }}</span>
+                                </div>
+                            </ng-container>
+                        </ng-container>
+                    </div>                
+               
+                         
+                    <div class="bottom-toolbar">
+                        <button routerLink="/main" [queryParams]="{uid : uid}" class="toolbar-button-main"><img src="https://pngimg.com/uploads/cv/cv_PNG37.png" style="width:40px; height: 40px;"></button>
+                        <button routerLink="/main" [queryParams]="{uid : uid}" class="toolbar-button-main"><img src="https://www.nicepng.com/png/full/17-178841_home-png-home-icon-free.png" style="width:40px; height: 40px;"></button>
+                        <button class="toolbar-button-main"><img src="https://cdn3.iconfinder.com/data/icons/simple-files-1/128/Signal-512.png" style="width: 50px; height: 50px;"><i class="fas fa-chart-bar"></i></button>
+                       
+                          
+                    </div>
+    </ng-container>
+    </ng-container>
+    </div>

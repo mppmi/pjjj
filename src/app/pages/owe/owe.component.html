@@ -1,0 +1,45 @@
+<div class="content">
+    <div class="top-toolbar ">
+        <button *ngIf="uid" routerLink=""  class="toolbar-button" style="margin-left: 80pc; margin-top: 1px;">
+          <img src="https://www.svgrepo.com/show/499618/logout.svg" style="height: 40px; width: 40px;">
+      </button>
+        <div style="margin-left: 120px; margin-right: 120px;">
+            <button mat-button (click)="goback()">
+                <span style="font-size: 25px; padding: 5px; color: yellow;"> < BACK</span>
+            </button>
+        </div>
+        <div style="text-align: center; font-size: 40px;">
+            <span>Owe</span>
+        </div>
+        <ng-container *ngFor="let users of userData; let i = index;">
+
+          <div style="display: flex; align-items: center; margin-left: 300px; flex-direction:row ">
+            
+            <div style="margin-right: 20px; margin-left: 70px; margin-top: 20px; width: 150px; height: 150px;">
+              <img class="image-hover" [src]="users.avatar" style="border-radius: 50px; width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div>
+              <span>{{ users.username }}</span> 
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; margin-left: 30pc;  ">
+            <div style="margin-right: 20px; margin-left: 70px; margin-top: -6pc; width: 150px; height: 150px;">
+          <div style="margin-left: 16pc;">
+            <button routerLink="/oweprofile" [queryParams]="{uid : users.userID}" class="toolbar-button-main" ><img src="https://coach.io/assets/img/default-avatar.png"style="width: 50px; height: 50px;"><i class="fas fa-chart-bar"></i></button>
+          </div>
+          <div style="margin-left: 43pc; margin-top: -5pc;">
+            <button routerLink="/rank" [queryParams]="{uid : users.userID}" class="toolbar-button-main"><img src="https://cdn3.iconfinder.com/data/icons/simple-files-1/128/Signal-512.png" style="width: 50px; height: 50px;"><i class="fas fa-chart-bar"></i></button>
+          </div>
+        </div>
+          </div>
+        </ng-container>
+          <div class="bottom-toolbar">
+            <button routerLink="/" [queryParams]="{uid : uid}" class="toolbar-button-main"><img src="https://pngimg.com/uploads/cv/cv_PNG37.png" style="width:40px; height: 40px;"></button>
+            <button routerLink="/" [queryParams]="{uid : uid}" class="toolbar-button-main"><img src="https://www.nicepng.com/png/full/17-178841_home-png-home-icon-free.png" style="width:40px; height: 40px;"></button>
+            <button class="toolbar-button-main"><img src="https://cdn3.iconfinder.com/data/icons/simple-files-1/128/Signal-512.png" style="width: 50px; height: 50px;"><i class="fas fa-chart-bar"></i></button>
+           
+              
+        </div>
+      </div>
+    </div>
+    

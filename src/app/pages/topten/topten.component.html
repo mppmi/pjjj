@@ -1,0 +1,67 @@
+<div class="content">
+  <div class="top-toolbar">
+    <button *ngIf="uid" routerLink="" class="toolbar-button" style="margin-left: 80pc;  margin-top: 1px;">
+      <img src="https://www.svgrepo.com/show/499618/logout.svg" style="height: 40px; width: 40px;">
+    </button>
+    <div style=" margin-right: 50pc;">
+      <button mat-button (click)="goback()">
+        <span style="font-size: 25px; padding: 5px; color: yellow;"> < BACK</span>
+      </button>
+    </div>
+    <div style="text-align: center; font-size: 45px;">
+      <span>Top 10 of the week</span>
+    </div>
+    <div style=" margin-top: 5pc;">
+      <span style="margin-left: -7pc;">Order</span>
+      <span style="margin-left: 15.5pc;">Playlist</span>
+      <span style="margin-left: 16pc;">NamePlaylist</span>
+      <span style="margin-left: 16pc;">SumScore</span>
+      <span style="margin-left: 7.5pc;">Previous sequence</span>
+    </div>
+    
+   <ng-container *ngFor="let photo of photoData.slice(0, 10); let i = index;">
+  <div>
+    <div *ngIf="i < 10">
+      <span style="font-size: 20px;" [ngClass]="{'green-text': i > 0 && calculateRankDifference(photo.photoID, rankData[i - 1].ranking) < 0, 'red-text': i > 0 && calculateRankDifference(photo.photoID, rankData[i - 1].ranking) > 0 }">{{ i + 1 }}</span>
+    </div>
+        <div style="margin-top: 20px; width: 150px; height: 150px;">
+          <img class="image-hover" [src]="photo.photo_url" style="border-radius: 50px; width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div>
+          <span>{{ photo.name_playlist }}</span>
+        </div>
+        <div style="margin-right: 100px;">
+          <span>{{ photo.sumscore }}</span>
+        </div>
+        <div class="rank-previous">
+          <ng-container *ngFor="let rank of rankData; let i = index;">
+            <ng-container *ngIf="photo.photoID == rank.photoID">
+              <span *ngIf="calculateRankDifference(photo.photoID, rank.ranking) !== 0"> 
+                <div  style="margin-left: -15pc;"  [ngClass]="{'icon-up': calculateRankDifference(photo.photoID, rank.ranking) > 0, 'icon-down': calculateRankDifference(photo.photoID, rank.ranking) < 0}">
+                  {{ calculateRankDifference(photo.photoID, rank.ranking) }}
+                </div>
+              </span>
+              <span *ngIf="calculateRankDifference(photo.photoID, rank.ranking) === 0"> 
+                <div class="icon-zero"  style="margin-left: -15pc;"></div>
+              </span>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="bottom-toolbar">
+    <button routerLink="/main" [queryParams]="{uid : this.uid}" class="toolbar-button-main"><img src="https://www.nicepng.com/png/full/17-178841_home-png-home-icon-free.png" style="width:40px; height: 40px;"></button>
+    <button routerLink="/topten"[queryParams]="{uid : this.uid}" class="toolbar-button-main"><img src="https://i.pinimg.com/originals/92/25/c5/9225c5849fa25de3b2e6a32feda94d09.png" style="width: 50px;"><i class="fas fa-chart-line"></i></button>
+    <button routerLink="" [queryParams]="{uid : this.uid}" class="toolbar-button-main"><img src="https://t-pop.com/images/love-hand-1.png" height="100px" alt="icon" style="width: 50px; height: 50px;"><i class="fas fa-vote-yea"></i></button>
+    <button routerLink="/rank" [queryParams]="{uid : this.uid}" class="toolbar-button-main"><img src="https://cdn3.iconfinder.com/data/icons/simple-files-1/128/Signal-512.png" style="width: 50px; height: 50px;"><i class="fas fa-chart-bar"></i></button>
+    <button *ngIf="uid" routerLink="/add" [queryParams]="{uid : this.uid}" class="toolbar-button-main">
+      <img src="https://icon-library.com/images/person-icon-svg/person-icon-svg-2.jpg" style="width: 50px; height: 50px;">
+      <i class="fas fa-user"></i>
+    </button>
+    <button *ngIf="!uid" routerLink="/login" class="toolbar-button-main">
+      <img src="https://icon-library.com/images/person-icon-svg/person-icon-svg-2.jpg" style="width: 50px; height: 50px;">
+      <i class="fas fa-user"></i>
+    </button>
+  </div>
+

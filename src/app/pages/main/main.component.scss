@@ -1,0 +1,105 @@
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-top: -70px;
+   
+}
+
+.search-input {
+    width: calc(80% - 150px); /* Adjust width as needed */
+    margin-left: 100px; /* Adjust margin as needed */
+    padding: 8px 10px; /* Adjust padding as needed */
+    border-radius: 5px;
+    border: none;
+   
+}
+.toolbar-button{
+    margin-left: 20px;
+}
+.toolbar-button1{
+    margin-left: 125px;
+}
+.toolbar-button2 {
+    float: right;
+    margin-top: 40px;
+    margin-right: 120px;
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 0 0 calc(16.666% - 20px); /* 20px คือความห่างระหว่างการ์ด */
+    margin: 10px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+.bottom-toolbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #7c7c7c; 
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.toolbar-button-main {
+    padding: 10px 20px;
+    background-color: #afafaf00; 
+    color: #fff; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toolbar-button:hover {
+    background-color: #777; 
+}
+/* สไตล์สำหรับปุ่มค้นหา */
+.toolbar-button {
+    background-color: #fff; /* เปลี่ยนสีพื้นหลัง */
+    color: #fff; /* เปลี่ยนสีของตัวอักษร */
+    border: none; /* ลบเส้นขอบ */
+    border-radius: 80px; /* ปรับรูปร่างเป็นวงกลม */
+    padding: 8px 15px; /* ปรับขนาดการเรียงตำแหน่งของข้อความภายในปุ่ม */
+    cursor: pointer; /* เปลี่ยนเป็นเคอร์เซอร์เมื่อชี้ */
+}
+
+/* สไตล์เมื่อชี้หน้าปุ่ม */
+.toolbar-button:hover {
+    background-color: #0f5a555a; /* เปลี่ยนสีพื้นหลังเมื่อชี้ */
+}
+
+/* สไตล์เมื่อคลิกปุ่ม */
+.toolbar-button:active {
+    background-color: #80000969; /* เปลี่ยนสีพื้นหลังเมื่อคลิก */
+}
+
+.playlistadd{
+    margin-left: 95pc;
+     margin-top: 60px;
+     color: #ffeaea;
+      background-color: rgba(53, 55, 57, 0.326);
+       border-radius: 80px;
+       border: none;
+       height: 80px;
+        width: 80px; 
+        cursor: pointer;
+}
+.content {
+    position: relative; 
+    z-index: 1; 
+    overflow-y: auto;
+    height: calc(100vh - 50px);
+    padding-bottom: 100px;
+}
+
+
+
